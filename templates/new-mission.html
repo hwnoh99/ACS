@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <title>New Mission</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel='stylesheet' href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css')}}">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="side-nav">
+      <p style="color: #848CB5;background-color:#F7E7D6;font-size: 145%;text-align:center;">Inserted LiST</p>
+      <a href="#about">&nbsp AMR1</a>
+      <a href="#services">&nbsp AMR_2</a>
+      <a href="#clients">&nbsp AMR_3</a>
+    </div>
+
+
+    <aside id="c2">
+<!--        <button class="login-button" onclick="window.location.href='http://localhost:3000/login?link=2';"> 로그인 </button>-->
+
+        <div class="mission-card">
+            <p style="color:white; font-size:210%; margin: 1.5%">Direct Robots</p>
+            <div class="card-body">
+            <form action="/new-mission" method="post">
+                <div class="form1">
+                    <label for="p1" class="form-label" style="color: white;">Action Type</label>
+                    <input type="text" name="type" class="form-control" value="7" style="background-color: #69c9d0; color: whitesmoke;" placeholder="7" required>
+                 </div>
+                 <div class="form1">
+                    <label for="p1" class="form-label" style="color: white;">From</label>
+                    <input type="text" name="start" class="form-control" id="p1" style="background-color: inherit; color: whitesmoke;" placeholder="Start point" required>
+                </div>
+                 <div class="form1">
+                    <label for="p2" class="form-label" style="color: white;">To</label>
+                    <input type="text" name="stop" class="form-control" id="p2" placeholder="End point" style="background-color: inherit; color: whitesmoke;" placeholder="Start point" required>
+                </div>
+                <!---   버튼   --->
+                <!--   버튼1   -->
+                <button name="sb-type" type="submit" class="round-button" style="margin: 1%; background-color: #fe5756; color: #fba9ae;" value="create" method="post">
+                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                 </button>
+                <!--   버튼2   -->
+                <button name="sb-type" type="submit" class="round-button" style="margin: 0%; background-color: #c556fe; color: #f1a8ff;" method="post">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </button>
+                <!--   버튼1   -->
+                <button name="sb-type" type="submit" class="round-button" style="margin: 1%; background-color: #FFFAA0; color: #848884;" value="delete" onclick="" method="post">
+                    <i class="fa fa-times" style="font-size:125%; font-weight: bold;" aria-hidden="true"></i>
+                </button>
+                <!----       ---->
+            </form>
+            </div>
+        </div>
+    </aside>
+
+    <div id="nav-bar">
+        <ul class="nav-bar">
+            <li><a href="fhttp://localhost:3000/alarm"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> 알람</a></li>
+            <li><a href="http://localhost:3000/new-mission"> <i class="fa fa-paper-plane" aria-hidden="true"></i> 미션생성</a></li>
+            <li><a href="#"> <i class="fa fa-list" aria-hidden="true"></i> 미션목록</a></li>
+            <li><a href="http://localhost:3000/vehicle"> <i class="fa fa-car" aria-hidden="true"></i> 차량</a></li>
+            <li><a href="#"> <i class="fa fa-bars" aria-hidden="true"></i> 메뉴</a></li>
+        </ul>
+    </div>
+
+<script>
+
+function myFunction() {
+  alert("The vehicle is inserted");
+}
+</script>
+</body>

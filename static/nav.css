@@ -1,0 +1,129 @@
+/* 내비게이션바 */
+
+
+  .nav-bar li a {
+    float: left;
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 120%;
+  }
+
+  .nav-bar li a:hover {
+    background: silver;
+  }
+  
+  @media (min-width: 481px) {
+    .nav-bar li a {
+      padding: 8px 50px;
+      text-decoration: none;
+      font-size: 23px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-bar li a {
+      padding: 3.5% 5%;
+      font-size: 135%;
+    }
+  }
+/* end 내비게이션바 */
+
+
+/* 사이드냅 Side-Nav */
+.side-nav {
+  height: 94%;
+  width: 10%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin: 5px;
+  background-color: #69c9d0;
+  overflow-x: hidden;
+  padding-top: 1%;
+  border-right: 2px solid ;
+  border-radius: 5px;
+}
+
+.side-nav a {
+  padding: 1%;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.side-nav a:hover {
+  color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+  .side-nav {padding-top: 15px;}
+  .side-nav a {font-size: 18px;}
+}
+
+
+
+
+
+/* */
+/* 과거 */
+/* */
+.center {
+    padding: 70px 0px;
+    text-align: center;
+  }
+
+.v-font {
+    font-family: Verdana, sans-serif;
+    border-top-style: dotted;
+    position: relative
+}
+
+.round1 {
+    background-color: #344453;
+    color:whitesmoke;
+    font-size: large;
+    border: 2px solid #344453;
+    border-radius: 10px;
+    padding: 0.3%;
+    margin: -0.1%;
+  }
+
+.round2 {
+    border-radius: 10px;
+    padding: 0.3%;
+    margin: 2%;
+}
+
+.round-body {
+    margin: 0px;
+    width: 100%;
+    border: 2px solid #344453;
+    border-radius: 10px;
+    position: relative;
+  }
+
+.button-three {
+    color:#fff;
+    margin-top: 5%;
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 6px;
+    padding: 1.5%;
+    width: 180px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.button-three:hover{
+   background:#fff;
+   box-shadow:0px 2px 10px 5px #97B1BF;
+   color:#000;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <title>Vehicle</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel='stylesheet' href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css')}}">
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <p></p>
+    <aside>
+        <div class="mission-card" style="width:100%">
+            <div style="text-align: center; margin-top:3%;">
+            <!--  table data랑 dark-table 확인필요-->
+           <div class="table-data">
+            <table class="dark-table">
+                <tr style="background-color: #A3EBB1; color:#000C66;">
+                    <td>AMR</td>
+                    <td>IP 주소</td>
+                    <td>미션코드</td>
+                    <td>출발지</td>
+                    <td>도착지</td>
+                    <td>현재액션</td>
+                    <td>배터리</td>
+                    <td>시뮬레이션</td>
+                    <td>상태</td>
+                </trstyle>
+                <tr>
+                    <td>amr_2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>e</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>amr_3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>f</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>amr_3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>e</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <!--- <p style="background-color: gray; margin-bottom:5%;">새로고침 &nbsp&nbsp 모두정지</p> -->
+            <p>&nbsp</p><p>&nbsp</p>
+            <form action='vehicle' method='post'>
+              <select name="node" class="select-basic" style="width: 200px;">
+                      <option value='1' selected>Charge_01</option>
+                      <option value=4>Charge_02</option>
+              </select>
+              <select name="vehicle" class="select-basic" style="width: 250px;">
+                      <option value='AMR_01' selected>AMR_01</option>
+                      <option value=3>AMR_02</option>
+                      <option value=4>amr_3</option>
+              </select>
+              <button type="submit" class='btn btn-outline-light' style="margin: 1%;" method='post'>
+                  insert
+              </button>
+            </form>
+           </div>
+          </div>
+        </div>
+    </aside>
+
+
+    <div id="nav-bar">
+          <ul class="nav-bar">
+            <li><a href="http://localhost:3000/alarm"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> 알람</a></li>
+            <li><a href="http://localhost:3000/new-mission"> <i class="fa fa-paper-plane" aria-hidden="true"></i> 미션생성</a></li>
+            <li><a href="#"> <i class="fa fa-list" aria-hidden="true"></i> 미션목록</a></li>
+            <li><a href="http://localhost:3000/vehicle"> <i class="fa fa-car" aria-hidden="true"></i> 차량</a></li>
+            <li><a href="#"> <i class="fa fa-bars" aria-hidden="true"></i> 메뉴</a></li>
+          </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,296 @@
+body {
+    background-color: #f0f0ff !important;
+    color: white;
+    font-size : 13px;
+}
+
+aside {
+    position: relative;
+    margin: 1% 1.5%;
+    float: right;
+    width: 85%;
+    /* border: 2px solid darkgray; */
+
+}
+
+@media (max-width: 1366px) {
+    aside {
+        float: none;
+        width: 90%;
+    }
+}
+
+
+/* 버튼 */
+.round-button {
+    padding: 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 125%;
+    margin: 0%;
+    border: none;
+    border-radius: 50%;
+}
+
+.login-button {
+    float:right;
+    text-align: center;
+    font-size: 100%;
+    font-weight 500;
+    overflow: hidden;
+    padding: 0.4% 1.6%;
+    margin: 0px auto;
+    display: flex;
+    background-color: #ee1d52;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* 카드 */
+.mission-card {
+    position: relative;
+    margin-top: 3%;
+    width: 100%;
+    padding: 0.3% 0.5%;
+    border-radius: 35px;
+    background-color: #69c9d0;
+}
+
+.card-container {
+    width: 100%;
+}
+
+@media (max-width: 1366px) {
+    .card-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        width: 90%;
+    }
+}
+
+/* 카드내 form */
+.form1 {
+    padding: 0.3%;
+    margin: 0.5%;
+    margin-bottom: 1%;
+    font-weight: bold;
+    color: black;
+    background-color: #69c9d0;
+    color: whitesmoke;
+}
+
+/* 라디오버튼 form */
+.form-radio {
+    padding: 0.3%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    color: whitesmoke;
+    font-size: medium;
+}
+
+/* 라디오버튼 디자인 */
+input[type='radio']:after {
+    width: 21px;
+    height: 21px;
+    border-radius: 21px;
+    position: relative;
+    margin-left: -10%;
+    margin-top: -20%;
+    background-color: whitesmoke;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+
+input[type='radio']:checked:after {
+        width: 21px;
+        height: 21px;
+        border-radius: 21px;
+        margin-left: -10%;
+        background-image: linear-gradient(OrangeRed, yellow);
+        content: '';
+        display: inline-block;
+        visibility: visible;
+}
+/* end 라디오버튼 */
+
+
+/* 테이블 */
+.dark-table {
+    color: white;
+    table-layout: fixed;
+}
+
+.table-data {
+    table-layout:fixed;
+    /* color: #393943 !important;  */
+    margin-top: 0%;
+    display: inline-block;
+}
+
+@media (max-width:768px) {
+    .table-data {
+      overflow-x:auto;
+    }
+  }
+
+.dark-table td, .dark-table th {
+    padding: 9px 120px;
+    border: "1px" solid;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 120%;
+    border-left: 0;
+	border-right: 0;
+}
+
+@media (max-width:1366px) {
+    .dark-table td, .dark-table th {
+      padding: 18px 28px;
+      font-size: 100%;
+    }
+  }
+
+@media (max-width: 720px) {
+    .dark-table td, .dark-table th {
+        padding: 4px 10px;
+    }
+}
+/* end 테이블*/
+
+
+/* 셀렉트박스 */
+.select-basic {
+    position: relative;
+    height: 35px;
+    border-style: double;
+    border-radius: 5px;
+    color: whitesmoke;
+    background: #5b5150;
+    border-color: darkgray;
+}
+/* end 셀렉트박스 */
+
+/* 체크박스 */
+input[type="checkbox"]{
+        display: none;
+      }
+input[type="checkbox"] + label{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-top: 1%;
+        margin-left: -0.2%;
+        border:3px solid #707070;
+        position: relative;
+      }
+input[id="check1"]:checked + label::after{
+        content:'✔';
+        font-color: yellow;
+        font-size: 25px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        position: absolute;
+        left: -5%;
+        top:-35%;
+      }
+
+/* end 체크박스
+ */
+
+
+
+
+
+/* END main Components */
+/* --------------------------- */
+
+/* 네비게이션바 */
+
+.nav-bar {
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;
+    bottom: -2%;
+    width: 100%;
+    background: linear-gradient(to bottom, #69c9d0,#69c9d0,#3EB489);
+    text-align: center;
+  }
+
+  .nav-bar li a {
+    float: left;
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 120%;
+  }
+
+  .nav-bar li a:hover {
+    background: silver;
+  }
+
+  @media (min-width: 481px) {
+    .nav-bar li a {
+      padding: 8px 50px;
+      text-decoration: none;
+      font-size: 23px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-bar li a {
+      padding: 3.5% 5%;
+      font-size: 135%;
+    }
+  }
+/* end 네비게이션바 */
+
+
+/* 사이드넵 Side-Nav */
+.side-nav {
+  height: 99%;
+  width: 12%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  margin-top: 0%;
+  background-color: #fc9c9d;
+  overflow-x: hidden;
+  padding-top: 1%;
+  border-radius: 1px;
+}
+
+.side-nav a {
+  padding: 1%;
+  text-decoration: none;
+  font-size: 140%;
+  color: whitesmoke;
+  display: block;
+}
+
+.side-nav a:hover {
+  color: #f1f1f1;
+}
+
+
+
+/*폰트 모음*/
+.text-bold {
+  color: white;
+  font-weight: 500;
+  font-size: 130%;
+  margin-bottom: 0.3%;
+  margin-left: -0.3%;
+  font-family: Verdana;
+}
+/*end 폰트 모음*/
+
