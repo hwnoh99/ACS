@@ -16,7 +16,7 @@ aside {
 @media (max-width: 1366px) {
     aside {
         float: none;
-        width: 90%;
+        width: 92%;
     }
 }
 
@@ -122,17 +122,11 @@ input[type='radio']:checked:after {
 /* end 라디오버튼 */
 
 
+
 /* 테이블 */
-.dark-table {
+.amr-table {
     color: white;
     table-layout: fixed;
-}
-
-.table-data {
-    table-layout:fixed;
-    /* color: #393943 !important;  */
-    margin-top: 0%;
-    display: inline-block;
 }
 
 @media (max-width:768px) {
@@ -141,8 +135,8 @@ input[type='radio']:checked:after {
     }
   }
 
-.dark-table td, .dark-table th {
-    padding: 9px 120px;
+.amr-table td, .dark-table th {
+    padding: 9px 56px;
     border: "1px" solid;
     border-color: inherit;
     border-style: solid;
@@ -153,7 +147,7 @@ input[type='radio']:checked:after {
 }
 
 @media (max-width:1366px) {
-    .dark-table td, .dark-table th {
+    .amr-table td, .dark-table th {
       padding: 18px 28px;
       font-size: 100%;
     }
