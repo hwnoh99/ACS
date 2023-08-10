@@ -49,7 +49,8 @@ class RestPost:
         except Exception as err:
             return err
 
-        # return redirect(url_for('vehicle'))
+        # console print:
+        # 1:
 
     @staticmethod
     def new_mission(token, msn_type, submit_type, start, stop):
@@ -61,8 +62,8 @@ class RestPost:
             return redirect(url_for('new_mission'))
 
         # if submit_type == 'create':
-        print(type(start))
-        print(start)
+        print(request.form)
+        print(start + ", " + stop)
 
         try:
             uri_new_mission = 'http://127.0.0.1:8081/wms/rest/missions?&sessiontoken=' + token
@@ -88,9 +89,13 @@ class RestPost:
 
             res_raw = requests.post(uri_new_mission, data=json.dumps(data))
             print(res_raw.content)
-            print(request.form)
 
             return redirect(url_for('new_mission'))
         except Exception as err:
             return err
+
+        # console print:
+        # 1: post 내용
+        # 2: fromNode, toNode request 결과
+        # 3: request 결과
 
