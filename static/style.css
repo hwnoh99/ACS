@@ -129,13 +129,7 @@ input[type='radio']:checked:after {
     table-layout: fixed;
 }
 
-@media (max-width:768px) {
-    .table-data {
-      overflow-x:auto;
-    }
-  }
-
-.amr-table td, .dark-table th {
+.amr-table td, .amr-table th {
     padding: 9px 56px;
     border: "1px" solid;
     border-color: inherit;
@@ -146,15 +140,22 @@ input[type='radio']:checked:after {
 	border-right: 0;
 }
 
-@media (max-width:1366px) {
-    .amr-table td, .dark-table th {
-      padding: 18px 28px;
+@media (max-width:1466px) {
+    .amr-table td, .amr-table th {
+      padding: 9px 36px;
       font-size: 100%;
     }
   }
 
-@media (max-width: 720px) {
-    .dark-table td, .dark-table th {
+@media (max-width:980px) {
+    .amr-table td, .amr-table th {
+      padding: 2% 28px;
+      font-size: 100%;
+    }
+  }
+
+@media (max-width:680px) {
+    .amr td, .amr-table th {
         padding: 4px 10px;
     }
 }
@@ -232,13 +233,21 @@ input[id="check1"]:checked + label::after{
     background: silver;
   }
 
-  @media (min-width: 481px) {
+  @media (min-width: 981px) {
     .nav-bar li a {
       padding: 8px 50px;
       text-decoration: none;
       font-size: 23px;
     }
   }
+
+  @media (max-width: 980px) {
+    .nav-bar li a {
+      padding: 2% 4%;
+      font-size: 20px;
+    }
+  }
+
 
   @media (max-width: 480px) {
     .nav-bar li a {

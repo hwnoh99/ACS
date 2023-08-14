@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu and Charts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel='stylesheet' href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+<canvas id="lineChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+const xValues = [50,60,70,80,90,100,110,120,130];
+const yValues = [7,8.5,8,9,9,9,10,11,14];
+
+new Chart("lineChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 4, max:16}}],
+    }
+  }
+});
+</script>
+
+<div id="nav-bar">
+          <ul class="nav-bar">
+            <li><a href="http://localhost:3000/alarm"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> 알람</a></li>
+            <li><a href="http://localhost:3000/new-mission"> <i class="fa fa-paper-plane" aria-hidden="true"></i> 미션생성</a></li>
+            <li><a href="#"> <i class="fa fa-list" aria-hidden="true"></i> 미션목록</a></li>
+            <li><a href="http://localhost:3000/vehicle"> <i class="fa fa-car" aria-hidden="true"></i> 차량</a></li>
+            <li><a href="http://localhost:3000/menu"> <i class="fa fa-bars" aria-hidden="true"></i> 메뉴</a></li>
+          </ul>
+    </div>
+</body>
+</html>
