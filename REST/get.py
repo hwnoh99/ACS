@@ -22,6 +22,15 @@ class RestGet:
             print('Logging in')
             return -1  # return error
 
+    @staticmethod
+    def get_vehicle_data(token):
+        try:
+            return render_template('chart.html')
+        except KeyError as err:
+            return redirect(url_for('login', link=1))
+        except requests.ConnectionError:
+            return '503 Server Unavailable :('
+
     # 알람 요청
     @staticmethod
     def get_alarm(token):

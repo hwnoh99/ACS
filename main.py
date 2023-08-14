@@ -80,6 +80,12 @@ def new_mission_post():
     return result
 
 
+@app.route('/menu', methods=['GET'])
+def chart():
+    result = RestGet.get_vehicle_data(token)
+    return result
+
+
 @app.route('/503', methods=['GET'])
 def error503():
     return render_template('error503.html')
