@@ -81,7 +81,7 @@ def new_mission_post():
 
 
 @app.route('/menu', methods=['GET'])
-def chart():
+def graphs():
     result = RestGet.get_vehicle_data(token)
     return result
 
