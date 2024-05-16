@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Vehicle</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel='stylesheet' href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css')}}">
+
+    <script type="text/javascript">
+        function refreshPage() {
+            setTimeout(function() {
+                location.reload();
+            }, 50000); //
+        }
+        window.onload = refreshPage;
+        </script>
+</head>
+
+<body>
+<aside id="d1">
+    <div class="modbus-card"> <!-- from new-mission.css -->
+        <div class="modbus-card-body">
+            <p style="font-size: 200%;">Modbus Data List</p>
+            {{ regs[0] }}
+            <p></p>
+            {{ regs[1] }}
+            {{ regs[2] }}
+            {{ regs[3] }}
+            {{ regs[4] }}
+            <p></p>
+            {{ regs[5] }}
+            {{ regs[6] }}
+            {{ regs[7] }}
+            {{ regs[8] }}
+        </div>
+    </div>
+    <div id="nav-bar">
+        <ul class="nav-bar">
+            <li><a href="/alarm"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> 알람</a></li>
+            <li><a href="/new-mission"> <i class="fa fa-paper-plane" aria-hidden="true"></i> 미션생성</a></li>
+            <li><a href="#"> <i class="fa fa-list" aria-hidden="true"></i> 미션목록</a></li>
+            <li><a href="/vehicle"> <i class="fa fa-car" aria-hidden="true"></i> 차량</a></li>
+            <li><a href="/data"> <i class="fa fa-bars" aria-hidden="true"></i> 메뉴</a></li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

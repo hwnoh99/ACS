@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Error Handling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var token = '{{ token }}';
+        var base_uri = 'http://127.0.0.1:8081/wms/';
+
+        $(document).ready(function() {
+            function update_info() {
+                $.ajax({
+                    url: base_uri + '/rest/vehicles?&sessiontoken=' + token,
+                    type: 'GET',
+                    dataType: 'json',
+
+                    success: function(response) {
+                        $('#name').text(response.payload.vehicles[0].name);
+                        $('#action').text(response.payload.vehicles[0].action.name);
+                    },
+                    error: function(request, status, error) {
+                        console.log("message: " + request.responseText)
+                        console.log("error: " + error);
+
+                        window.location.href = 'http://127.0.0.1:3000/login';
+                    }
+                });
+            }
+            setInterval(update_info, 1000);
+        });
+    </script>
+</head>
+<body>
+    <p></p>
+    <p id="name"></p>
+    <p id="action"></p>
+</body>
+</html>
