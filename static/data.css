@@ -1,0 +1,25 @@
+/* 카드 */
+.modbus-card {
+    position: relative;
+    margin-top: 3%;
+    width: 90%;
+    padding: 0.1% 0.5%;
+    border-radius: 3px;
+    background-color: #323338;
+}
+
+
+@media (max-width: 480px) {
+    .card-container {
+        width: 94%;
+    }
+}
+
+.modbus-card-body {
+    margin: 1%;
+    font-size: 120%;
+}
+
+
+
+

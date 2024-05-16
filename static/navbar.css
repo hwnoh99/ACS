@@ -1,0 +1,47 @@
+/* 하단 네비게이션바 */
+
+.nav-bar {
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;
+    bottom: -2%;
+    width: 100%;
+    background: #5865f2; (#5865f2 discord)
+    text-align: center;
+  }
+
+  .nav-bar li a {
+    float: left;
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 120%;
+  }
+
+  .nav-bar li a:hover {
+    background: silver;
+  }
+
+  @media (min-width: 981px) {
+    .nav-bar li a {
+      padding: 8px 50px;
+      text-decoration: none;
+      font-size: 23px;
+    }
+  }
+
+  @media (max-width: 980px) {
+    .nav-bar li a {
+      padding: 2% 4%;
+      font-size: 20px;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+    .nav-bar li a {
+      padding: 3.5% 5%;
+      font-size: 135%;
+    }
+  }
+/* end 하단 네비게이션바 */
