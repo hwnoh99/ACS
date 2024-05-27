@@ -43,11 +43,11 @@ class RestGet:
         except requests.ConnectionError:
             return '503 Server Unavailable :('
 
-    # Get data of vehicle
-    def get_vehicle_data(self, token):
-        try:
-            return render_template('chart.html')
-        except KeyError as err:
-            return redirect(url_for('login', link=1))
-        except requests.ConnectionError:
-            return '503 Server Unavailable :('
+    # # Get data of vehicle
+    # def get_vehicle_data(self, token):
+    #     try:
+    #         return render_template('chart.html')
+    #     except KeyError as err:
+    #         return redirect(url_for('login', link=1))
+    #     except requests.ConnectionError:
+    #         return '503 Server Unavailable :('
