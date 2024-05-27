@@ -64,7 +64,7 @@ def new_mission_post():
 
 
 @app.route('/data', methods=['GET'])
-def data():
+def modbus_data():
     regs = ModbusConn().read_regs()
     return render_template('data-received.html', regs=regs)
 
