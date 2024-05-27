@@ -2,6 +2,7 @@
 @import url('new-mission.css');
 @import url('navbar.css');
 @import url('data.css');
+@import url('head.css');
 
 body {
     background-color: #f0f0ff !important;

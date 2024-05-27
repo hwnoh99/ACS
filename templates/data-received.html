@@ -21,6 +21,8 @@
 </head>
 
 <body>
+    {% from "macro.html" import render_footer, render_header %}
+    {{ render_header() }}
     <aside id="d1">
         <div class="modbus-card"> <!-- from new-mission.css -->
             <div class="modbus-card-body">
@@ -40,14 +42,6 @@
         </div>
     </aside>
 
-     <div id="nav-bar">
-        <ul class="nav-bar">
-            <li><a href="/alarm"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> 알람</a></li>
-            <li><a href="/new-mission"> <i class="fa fa-paper-plane" aria-hidden="true"></i> 미션생성</a></li>
-            <li><a href="#"> <i class="fa fa-list" aria-hidden="true"></i> 미션목록</a></li>
-            <li><a href="/vehicle"> <i class="fa fa-car" aria-hidden="true"></i> 차량</a></li>
-            <li><a href="/data"> <i class="fa fa-bars" aria-hidden="true"></i> 메뉴</a></li>
-        </ul>
-    </div>
+    {{ render_footer() }}
 </body>
 </html>
