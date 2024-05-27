@@ -14,7 +14,7 @@ class ModbusConn:
         if connection:
             print("Connected Modbus server")
 
-            res = client.read_holding_registers(0, 9, slave=1)
+            res = client.read_holding_registers(0, 13, slave=1)
             print("Holding Regs :", res.registers)
             registers = res.registers
         else:
