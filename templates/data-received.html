@@ -17,7 +17,12 @@
             }, 1500);
         }
         window.onload = refreshPage;
-        </script>
+
+        function safetyColor() {
+            const div = document.getElementById('box-red');
+            div.style.backgroundColor = 'lightcoral';
+        }
+     </script>
 </head>
 
 <body>
@@ -25,11 +30,16 @@
     {{ render_header() }}
     <aside id="d1">
         <div id="box-red" class="box"></div>
-        <div id="box-orange" class="box"></div>
+        <div id="box-orange" class="box" onclick="safetyColor()"></div>
         <div id="box-yellow" class="box"></div>
 
         <div class="modbus-card"> <!-- from new-mission.css -->
             <div class="modbus-card-body">
+                <script>
+                    {% if regs[10] == 3 %}
+                        safetyColor();
+                    {% endif %}
+                </script>
                 <p style="font-size: 180%;">Modbus Data List</p>
                 {{ regs[0] }}
                 <p></p>
@@ -42,6 +52,11 @@
                 {{ regs[6] }}
                 {{ regs[7] }}
                 {{ regs[8] }}
+                <p></p>
+                {{ regs[9] }}
+                {{ regs[10] }}
+                {{ regs[11] }}
+                {{ regs[12] }}
             </div>
         </div>
     </aside>
