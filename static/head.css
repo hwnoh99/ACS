@@ -1,0 +1,40 @@
+header {
+    background-color: #323338;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* 로고 */
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+/* end 로고 */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 22px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
