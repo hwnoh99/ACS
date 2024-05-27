@@ -31,19 +31,19 @@
                         var items = response["payload"]["vehicles"];
                         items = _.sortBy(items, ['name']);
 
-                        var tableBody = $('#amr-table');
+                        var tableBody = $('#amr-tbody');
                         tableBody.empty();
 
                         items.forEach(function(item) {
                             tableBody.append(
-                                '<tr>' +
+                                // 백틱(backtick, `)
+                                `'<tr data-value="${item.name}" onclick="selectOption(this)">'` +
                                 '<td>' + item.name + '</td>' +
                                 '<td>' + item.missionid + '</td>' +
                                 '<td>' + item.state['mission.info'][2] + '</td>' +
                                 '<td>' + item.state['mission.info'][2] + '</td>' +
                                 '<td>' + item.action.name + '</td>' +
                                 '<td>' + item.state['battery.info'][0] + '</td>' +
-                                '<td>' + "  v  " + '</td>' +
                                 '<td>' + item.isloaded + '</td>' +
                                 '<td>' + item.state['traffic.info'][2] + '</td>' +
                                 '</tr>'
@@ -60,8 +60,17 @@
         }
        setInterval(update_info, 1000);
      });
+
+    function selectOption(row) {
+      let value = row.getAttribute('data-value');
+      console.log(value);
+      let selectBox = document.getElementById('vehicles');
+      selectBox.value = value;
+    }
 </script>
 <body>
+    {% from "macro.html" import render_footer, render_header %}
+    {{ render_header() }}
     <aside>
         <div class="mission-card" style="width:100%">
             <div style="text-align: center; margin-top:3%;">
@@ -74,34 +83,38 @@
                     <th>도착지</th>
                     <th>현재액션</th>
                     <th>배터리</th>
-                    <th>Sim</th>
                     <th>적재</th>
                     <th>상태</th>
                 </tr>
-                <tbody id="amr-table">
+                <tbody id="amr-tbody">
                     <!-- Ajax Data -->
                 </tbody>
             </table>
+            <p>&nbsp</p><p>&nbsp</p>
             <!--- <p style="background-color: gray; margin-bottom:5%;">새로고침 &nbsp&nbsp 모두정지</p> -->
 
-            <p>&nbsp</p><p>&nbsp</p>
+
             <form action='vehicle' method='post'>
-              <select name="node" class="select-basic" style="width: 200px;">
+              <select id="nodes" name='node' class="select-basic" style="width: 200px;">
                   <option value='Charger_01' selected>Charger_01</option>
                   <option value='Charger_02'>Charger_02</option>
                   <option value='Charger_03'>Charger_03</option>
                   <option value='Charger_04'>Charger_04</option>
+                  <option value='Park_01'>Park_01</option>
+                  <option value='Park_02'>Park_02</option>
+                  <option value='Park_03'>Park_03</option>
               </select>
-              <select name="vehicle" class="select-basic" style="width: 250px;">
+              <select id='vehicles' name='vehicle' class="select-basic" style="width: 250px;">
                   <option value='AMR_01' selected>AMR_01</option>
                   <option value='AMR_02'>AMR_02</option>
                   <option value='AMR_03(m)'>AMR_03(m)</option>
                   <option value='AMR_04'>AMR_04</option>
+                  <option value='W15'>W15</option>
               </select>
-              <button type="submit" class='btn btn-outline-light' style="margin: 1%;" method='post'>
+              <button type="submit" name="action" value="insert" class='btn btn-outline-light' style="margin: 1%;" method='post'>
                   insert
               </button>
-              <button type="submit" class='btn btn-light' style="margin: 0%;" method='post'>
+              <button type="submit" name="action" value="extract" class='btn btn-light' style="margin: 0%;" method='post'>
                   extract
               </button>
             </form>
@@ -109,16 +122,6 @@
           </div>
         </div>
     </aside>
-
-
-    <div id="nav-bar">
-        <ul class="nav-bar">
-            <li><a href="/alarm"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> 알람</a></li>
-            <li><a href="/new-mission"> <i class="fa fa-paper-plane" aria-hidden="true"></i> 미션생성</a></li>
-            <li><a href="#"> <i class="fa fa-list" aria-hidden="true"></i> 미션목록</a></li>
-            <li><a href="/vehicle"> <i class="fa fa-car" aria-hidden="true"></i> 차량</a></li>
-            <li><a href="/data"> <i class="fa fa-bars" aria-hidden="true"></i> 메뉴</a></li>
-        </ul>
-    </div>
+    {{ render_footer() }}
 </body>
 </html>
