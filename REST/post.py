@@ -9,16 +9,25 @@ class RestPost:
     def __init__(self):
         self.base_uri = 'http://127.0.0.1:8081/wms/'
 
+    def route_action(self, token):
+        act = request.form['action']
+
+        if act == 'insert':
+            return self.insert_vehicle(token)
+        elif act == 'extract':
+            return self.extract_vehicle(token)
+        else:
+            return 'Unknown button action'
+
     # 1대의 AMR 등록
     def insert_vehicle(self, token):
-        # Insert node, Selected AMR
-        insert_node = request.form['node']
-        amr = request.form['vehicle']
-        print(request.form)
-
         try:
+            insert_node = request.form['node']
+            amr = request.form['vehicle']
+            print(request.form)
+
             uri_insert_amr = self.base_uri + 'rest/vehicles/' + amr + '/command?&sessiontoken=' + token
-            # %20 is blank
+
             data = {
                 "command": {
                     "name": "insert",
@@ -27,7 +36,7 @@ class RestPost:
                     }
                 }
             }
-            res_raw = requests.post(uri_insert_amr, data=json.dumps(data))
+            res_raw = requests.post(url=uri_insert_amr, data=json.dumps(data), timeout=20)
             print(res_raw.content)
 
             res = str(res_raw)
@@ -40,11 +49,35 @@ class RestPost:
             #         return 'Vehicle is not ready for a new command'
             #     else:
             #         return 'Vehicle Error'
-            print(request.form['vehicle'])
 
             return redirect(url_for('vehicle'))
-        except Exception as err:
-            return err
+        except requests.Timeout:
+            print("ANT 서버 타임아웃")
+
+    def extract_vehicle(self, token):
+        try:
+            amr = request.form['vehicle']
+            print(request.form)
+
+            uri_extract_amr = self.base_uri + 'rest/vehicles/' + amr + '/command?&sessiontoken=' + token
+
+            data = {
+                "command": {
+                    "name": "extract",
+                    "args": {}
+                }
+            }
+            res_raw = requests.post(url=uri_extract_amr, data=json.dumps(data), timeout=20)
+            print(res_raw.content)
+
+            res = str(res_raw)
+            if res != '<Response [200]>':
+                return "Internal ANT Server Unavailable [500]"
+
+            return redirect(url_for('vehicle'))
+
+        except requests.Timeout:
+            print("ANT 서버 타임아웃")
 
     def new_mission(self, token):
         # 로그인이 안됐을때
@@ -63,7 +96,7 @@ class RestPost:
             msn_type = request.form['type']
 
             # 데이터 구조 example: ([('type', '7'), ('start', '100'), ('stop', '200'), ('btn-type', 'create')])
-            # ImmutableMultiDict
+            # 데이터 타입: ImmutableMultiDict
 
             # if submit_type == 'create':
             print(request.form)
@@ -91,13 +124,14 @@ class RestPost:
                     }
                 }
 
-                res_raw = requests.post(uri_new_mission, data=json.dumps(data))
+                res_raw = requests.post(uri_new_mission, data=json.dumps(data), timeout=20)
                 print(res_raw.content)
 
                 return redirect(url_for('new_mission'))
             except Exception as err:
-                return err
+                return "Error while mission creation"
 
+            #
             # console print:
             # 1: post 내용
             # 2: fromNode, toNode request 결과
