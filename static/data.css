@@ -1,6 +1,6 @@
 /* 카드 */
 .modbus-card {
-    position: relative;
+    position: absolute;
     margin-top: 3%;
     width: 90%;
     padding: 0.1% 0.5%;
@@ -12,6 +12,14 @@
 .modbus-card-body {
     margin: 1%;
     font-size: 120%;
+}
+
+.box {
+    float:left;
+    position: static;
+    width:150px;
+    box-shadow:3px 3px 2px #666767;
+    height:30px;
 }
 
 

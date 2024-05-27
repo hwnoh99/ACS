@@ -14,7 +14,7 @@
         function refreshPage() {
             setTimeout(function() {
                 location.reload();
-            }, 50000); //
+            }, 1500);
         }
         window.onload = refreshPage;
         </script>
@@ -24,6 +24,10 @@
     {% from "macro.html" import render_footer, render_header %}
     {{ render_header() }}
     <aside id="d1">
+        <div id="box-red" class="box"></div>
+        <div id="box-orange" class="box"></div>
+        <div id="box-yellow" class="box"></div>
+
         <div class="modbus-card"> <!-- from new-mission.css -->
             <div class="modbus-card-body">
                 <p style="font-size: 180%;">Modbus Data List</p>
