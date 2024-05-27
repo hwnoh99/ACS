@@ -8,14 +8,14 @@ header {
     padding: 0 20px;
 }
 
-/* 로고 */
+/* Logo */
 .logo a {
     color: white;
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
 }
-/* end 로고 */
+/* end Logo */
 
 nav ul {
     list-style: none;
